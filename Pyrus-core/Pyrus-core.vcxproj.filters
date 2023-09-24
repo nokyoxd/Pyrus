@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{C55F2ECF-B12C-89DA-DA45-7782C671BE68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render">
+      <UniqueIdentifier>{1CA98B76-0861-CDC3-7168-A61F5D3F68B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{6DAA42B6-D914-F72C-2253-A8D28EFCD481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils\logs">
+      <UniqueIdentifier>{11D54E7E-FDA2-4284-E636-B3AAD2A31EE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui">
+      <UniqueIdentifier>{5D3BD0F0-499E-5F95-F223-984BDE652B18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui\dx9">
+      <UniqueIdentifier>{C120240B-AD19-435D-D64B-28E2C2A32269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui\win32">
+      <UniqueIdentifier>{1FD5FF65-0BB9-C0BB-7419-BB0E601CAB3D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Pyrus.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Renderer.h">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Datatypes.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Logs\Logs.h">
+      <Filter>src\utils\logs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Macros.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imconfig.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imgui.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imgui_internal.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imstb_rectpack.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imstb_textedit.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\imstb_truetype.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\win32\imgui_impl_win32.h">
+      <Filter>vendor\imgui\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Utils\Utils.h" />
+    <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3_loader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\Window.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Renderer.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Logs\Logs.cpp">
+      <Filter>src\utils\logs</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\imgui.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\imgui_draw.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\imgui_tables.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\imgui_widgets.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
+      <Filter>vendor\imgui\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Application.cpp" />
+    <ClCompile Include="vendor\ImGui\opengl3\imgui_impl_opengl3.cpp" />
+  </ItemGroup>
+</Project>
