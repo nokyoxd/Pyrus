@@ -3,8 +3,9 @@
 #include <Windows.h>
 
 /*
-* Currently unused 
+* Currently unused
 */
+/*
 bool Console::Attach()
 {
 	if (AllocConsole() != TRUE)
@@ -52,3 +53,4 @@ bool Console::CloseFile()
 
 	return true;
 }
+*/

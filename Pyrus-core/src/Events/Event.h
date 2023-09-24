@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>s
+#include <string>
 
 enum EventType : int
 {

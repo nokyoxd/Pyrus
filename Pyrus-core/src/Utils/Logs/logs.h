@@ -1,9 +1,9 @@
 #pragma once
 
-#include <format>
 #include <fstream>
 #include <iostream>
 
+/*
 namespace Console {
 	inline FILE* Stream = nullptr;
 	inline std::ofstream FileStream;
@@ -25,4 +25,5 @@ namespace Console {
 		if (FileStream.is_open())
 			FileStream << _Text << std::endl;
 	}
-} 
+}
+*/

@@ -1,13 +1,10 @@
-project "Mayday-client"
-	kind "WindowedApp"
-	staticruntime "on"
-	targetname "Mayday-client"
+project "Pyrus-client"
+	kind "ConsoleApp"
+	staticruntime "off"
+	targetname "Pyrus-client"
 
 	language "C++"
-	cppdialect "C++20"
-
-	targetdir "$(SolutionDir)build/$(Configuration)/"
-	objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
+	cppdialect "C++17"
 
 	files
 	{
@@ -23,10 +20,10 @@ project "Mayday-client"
 
 	includedirs
 	{
-		"%{wks.location}/Mayday-client/src",
-		"%{wks.location}/Mayday-client/assets",
-		"%{wks.location}/Mayday-client/vendor",
-		"%{wks.location}/Mayday-core/src",
+		"%{wks.location}/Pyrus-client/src",
+		"%{wks.location}/Pyrus-client/assets",
+		"%{wks.location}/Pyrus-client/vendor",
+		"%{wks.location}/Pyrus-core/src",
 	}
 
 	libdirs
@@ -36,9 +33,18 @@ project "Mayday-client"
 
 	links 
 	{
-		"d3d9",
-		"Mayday-core",
+		"Pyrus-core",
 	}
+
+	-- Override for Visual Studio
+	filter "action:vs*"
+		targetdir "$(SolutionDir)build/$(Configuration)/"
+		objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
+
+	-- Override for CodeBlocks
+	filter "action:codeblocks"
+		targetdir "%{wks.location}/build/"
+		objdir "!%{wks.location}/build/intermediates/"
 
 	filter "system:windows"
 		systemversion "latest"

@@ -1,13 +1,10 @@
-project "Mayday-core"
+project "Pyrus-core"
 	kind "SharedLib"
-	staticruntime "on"
-	targetname "Mayday-core"
+	staticruntime "off"
+	targetname "Pyrus-core"
 
 	language "C++"
-	cppdialect "C++20"
-
-	targetdir "$(SolutionDir)build/$(Configuration)/"
-	objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
+	cppdialect "C++17"
 
 	files
 	{
@@ -23,15 +20,25 @@ project "Mayday-core"
 
 	includedirs
 	{
-		"%{wks.location}/Mayday-core/src",
-		"%{wks.location}/Mayday-core/assets",
-		"%{wks.location}/Mayday-core/vendor",
+		"%{wks.location}/Pyrus-core/src",
+		"%{wks.location}/Pyrus-core/assets",
+		"%{wks.location}/Pyrus-core/vendor",
+		"%{wks.location}/Pyrus-core/vendor/GLFW/include"
 	}
 
-	links 
-	{
-		"d3d9",
-	}
+	-- Override for Visual Studio
+	filter "action:vs*"
+		targetdir "$(SolutionDir)build/$(Configuration)/"
+		objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
+		links { "glfw3_mt", "opengl32" }
+		libdirs { "%{wks.location}/Pyrus-core/vendor/GLFW/lib-vc2022" }
+
+	-- Override for CodeBlocks
+	filter "action:codeblocks"
+		targetdir "%{wks.location}/build/"
+		objdir "!%{wks.location}/build/intermediates/"
+		links { "libglfw3.a", "opengl32", "glu32", "gdi32", "user32", "kernel32", "dwmapi"}
+		libdirs { "%{wks.location}/Pyrus-core/vendor/GLFW/lib-mingw-w64" }
 
 	filter "system:windows"
 		systemversion "latest"
