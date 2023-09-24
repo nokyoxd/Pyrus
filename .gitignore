@@ -1,7 +1,6 @@
 # Directories
 .vs/
 build/
-!vendor/premake/
 
 # Prerequisites
 *.d
