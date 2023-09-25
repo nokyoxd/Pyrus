@@ -5,8 +5,8 @@
 #include <ImGui/opengl3/imgui_impl_opengl3.h>
 #include <imgui/win32/imgui_impl_win32.h>
 
-#include "utils/macros.h"
-#include "utils/datatypes.h"
+#include "SDK/Macros.h"
+#include "SDK/Datatypes.h"
 
 enum class ERenderType : int
 {

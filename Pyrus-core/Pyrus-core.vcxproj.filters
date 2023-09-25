@@ -45,7 +45,7 @@
     <ClInclude Include="src\Core\Application.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\window.h">
+    <ClInclude Include="src\Core\Window.h">
       <Filter>src\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Events\Event.h">
@@ -57,16 +57,16 @@
     <ClInclude Include="src\Render\renderer.h">
       <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Datatypes.h">
+    <ClInclude Include="src\SDK\Datatypes.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Logs\logs.h">
+    <ClInclude Include="src\Utils\Logs\Logs.h">
       <Filter>src\Utils\Logs</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\Utils.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\macros.h">
+    <ClInclude Include="src\SDK\Macros.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h">
@@ -102,18 +102,20 @@
     <ClInclude Include="vendor\ImGui\win32\imgui_impl_win32.h">
       <Filter>vendor\ImGui\win32</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\Linux\LinuxWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\window.cpp">
+    <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Render\Renderer.cpp">
       <Filter>src\Render</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utils\Logs\logs.cpp">
+    <ClCompile Include="src\Utils\Logs\Logs.cpp">
       <Filter>src\Utils\Logs</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui.cpp">
@@ -134,5 +136,7 @@
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
       <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp" />
   </ItemGroup>
 </Project>

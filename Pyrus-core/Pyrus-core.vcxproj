@@ -103,14 +103,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Core\window.h" />
+    <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="src\Platform\Linux\LinuxWindow.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Pyrus.hpp" />
     <ClInclude Include="src\Render\renderer.h" />
-    <ClInclude Include="src\Utils\Datatypes.h" />
-    <ClInclude Include="src\Utils\Logs\logs.h" />
+    <ClInclude Include="src\SDK\Datatypes.h" />
+    <ClInclude Include="src\Utils\Logs\Logs.h" />
     <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="src\Utils\macros.h" />
+    <ClInclude Include="src\SDK\Macros.h" />
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
     <ClInclude Include="vendor\ImGui\imconfig.h" />
@@ -125,9 +127,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="src\Core\window.cpp" />
+    <ClCompile Include="src\Core\Window.cpp" />
+    <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Render\Renderer.cpp" />
-    <ClCompile Include="src\Utils\Logs\logs.cpp" />
+    <ClCompile Include="src\Utils\Logs\Logs.cpp" />
     <ClCompile Include="vendor\ImGui\imgui.cpp" />
     <ClCompile Include="vendor\ImGui\imgui_draw.cpp" />
     <ClCompile Include="vendor\ImGui\imgui_tables.cpp" />
