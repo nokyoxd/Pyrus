@@ -19,22 +19,19 @@ WindowsWindow::WindowsWindow()
     }
 
     glfwMakeContextCurrent(m_Window);
-}
+    glfwSetWindowUserPointer(m_Window, &m_Data);
 
-WindowsWindow::~WindowsWindow()
-{
-    glfwDestroyWindow(m_Window);
+    // Setup callbacks
+    glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
+    {
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-    glfwTerminate();
-}
+        Event e;
+        e.Type = EventType::WindowClose;
 
-void* WindowsWindow::GetNativeWindow() const
-{
-    return m_Window;
-}
+        data.EventCallback(e);
+    });
 
-void WindowsWindow::SetEventCallbacks(void* fn)
-{
     glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
     {
 
@@ -49,18 +46,25 @@ void WindowsWindow::SetEventCallbacks(void* fn)
     {
 
     });
-    
+
     glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
     {
-    
+
     });
 
     glfwSetWindowRefreshCallback(m_Window, [](GLFWwindow* window)
     {
 
     });
-    
+
     glfwSetErrorCallback(NULL); // Not in use yet
+}
+
+WindowsWindow::~WindowsWindow()
+{
+    glfwDestroyWindow(m_Window);
+
+    glfwTerminate();
 }
 
 void WindowsWindow::SetVSync(bool state)
@@ -68,9 +72,3 @@ void WindowsWindow::SetVSync(bool state)
 	glfwSwapInterval(state ? 1 : 0);
 	m_Data.VSync = state;
 }
-
-bool WindowsWindow::GetVSync() const
-{
-	return m_Data.VSync;
-}
-

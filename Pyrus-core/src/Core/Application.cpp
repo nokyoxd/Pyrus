@@ -15,7 +15,7 @@ Application::Application()
 
     // Setup all window callbacks
     std::cerr << "[PYRUS] Setting up callbacks" << std::endl;
-    //Window::Get().SetupCallbacks(m_Window);
+    m_Window->SetEventCallback(OnEvent);
 
     // Init renderer etc.
 }
@@ -32,7 +32,7 @@ void Application::Run()
     // Get the GLFWwindow pointer
     auto* window = static_cast<GLFWwindow*>(m_Window->GetNativeWindow());
 
-    while (!glfwWindowShouldClose(window) && m_Running)
+    while (m_Running)
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -44,23 +44,12 @@ void Application::Run()
     }
 }
 
-void Application::OnEvent(EventType eType)
+void Application::OnEvent(Event& e)
 {
-    switch (eType)
+    switch (e.Type)
     {
-    case None:
-        break;
-    case Key:
-        break;
-    case Mouse:
-        break;
-    case Cursor:
-        break;
-    case Resize:
-        break;
-    case Refresh:
-        break;
-    case Error:
+    case EventType::WindowClose:
+        Application::Get().OnWindowClose(e);
         break;
     }
 }

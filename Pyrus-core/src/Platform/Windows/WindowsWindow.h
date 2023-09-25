@@ -4,30 +4,32 @@
 
 #include <GLFW/glfw3.h>
 
-struct WindowData
-{
-	const char* Title;
-	int Width;
-	int Height;
-	bool Minimized;
-	bool VSync;
-
-	WindowData() : Title("Pyrus"), Width(1280), Height(720), Minimized(false), VSync(false) { }
-};
-
 class WindowsWindow : public Window
 {
 public:
 	WindowsWindow();
 	virtual ~WindowsWindow();
 
-	void* GetNativeWindow() const override;
+	unsigned int GetWidth() const override { return m_Data.Width; }
+	unsigned int GetHeight() const override { return m_Data.Height; }
 
-	void SetEventCallbacks(void* fn) override;
+	void* GetNativeWindow() const override { return m_Window; }
+	void SetEventCallback(const EventCallbackFn& fn) override { m_Data.EventCallback = fn; }
 
 	void SetVSync(bool state) override;
-	bool GetVSync() const override;
+	bool GetVSync() const override { return m_Data.VSync; }
 private:
 	GLFWwindow* m_Window = nullptr;
+
+	struct WindowData
+	{
+		const char* Title;
+		unsigned int Width, Height;
+		EventCallbackFn EventCallback;
+		bool VSync;
+
+		WindowData() : Title("Pyrus"), Width(1280), Height(720), VSync(false) { }
+	};
+
 	WindowData m_Data;
 };

@@ -108,7 +108,7 @@
     <ClInclude Include="src\Platform\Linux\LinuxWindow.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Pyrus.hpp" />
-    <ClInclude Include="src\Render\renderer.h" />
+    <ClInclude Include="src\Render\Renderer.h" />
     <ClInclude Include="src\SDK\Datatypes.h" />
     <ClInclude Include="src\Utils\Logs\Logs.h" />
     <ClInclude Include="src\Utils\Utils.h" />

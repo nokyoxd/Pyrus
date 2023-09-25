@@ -13,7 +13,7 @@ public:
 	PS_API ~Application();
 
 	PS_API void Run();
-	void OnEvent(EventType eType = EventType::None);
+	static void OnEvent(Event& e);
 
 	static Application& Get() { return *m_InstancePtr; };
 
@@ -22,6 +22,9 @@ public:
 	Application(Application&&) noexcept = delete;
 	Application& operator=(Application&) = delete;
 	Application& operator=(Application&&) noexcept = delete;
+private:
+	void OnWindowClose(Event& e) { m_Running = false; }
+
 private:
 	static Application* m_InstancePtr;
 

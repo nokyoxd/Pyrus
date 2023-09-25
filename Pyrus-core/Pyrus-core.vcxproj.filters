@@ -54,7 +54,7 @@
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\renderer.h">
+    <ClInclude Include="src\Render\Renderer.h">
       <Filter>src\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\SDK\Datatypes.h">
