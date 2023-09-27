@@ -28,6 +28,9 @@
     <Filter Include="src\Utils">
       <UniqueIdentifier>{4D9AFFB3-B904-B42A-0243-65D06EEC917F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Utils\Log">
+      <UniqueIdentifier>{9E10C983-0AD1-44BA-D30B-8E373F8B8996}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -49,6 +52,15 @@
     <Filter Include="vendor\ImGui\win32">
       <UniqueIdentifier>{DF0CDB2A-CBF0-9B80-3451-96D320548602}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\fmt">
+      <UniqueIdentifier>{699BC5A8-5553-07F6-BE5A-E051AA31A2E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\fmt\include">
+      <UniqueIdentifier>{DC1BC8B7-C8FF-880D-3160-83601D63738F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\fmt\include\fmt">
+      <UniqueIdentifier>{12300654-FE29-2FA6-E796-C5B6D32F9512}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h">
@@ -69,8 +81,17 @@
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Render\Renderer.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
     <ClInclude Include="src\SDK\Datatypes.h">
       <Filter>src\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDK\Macros.h">
+      <Filter>src\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Log\Log.h">
+      <Filter>src\Utils\Log</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\Utils.h">
       <Filter>src\Utils</Filter>
@@ -108,8 +129,45 @@
     <ClInclude Include="vendor\ImGui\win32\imgui_impl_win32.h">
       <Filter>vendor\ImGui\win32</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Renderer.h" />
-    <ClInclude Include="src\SDK\Macros.h" />
+    <ClInclude Include="vendor\fmt\include\fmt\args.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\chrono.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\color.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\compile.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\core.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\format-inl.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\format.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\os.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\ostream.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\printf.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\ranges.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\std.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\xchar.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
@@ -126,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="src\Render\Renderer.cpp">
       <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Log\Log.cpp">
+      <Filter>src\Utils\Log</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui.cpp">
       <Filter>vendor\ImGui</Filter>

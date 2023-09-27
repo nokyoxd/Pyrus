@@ -1,12 +1,15 @@
 #include "Application.h"
 
 #include <GLFW/glfw3.h>
+#include "Utils/Log/Log.h"
 #include "Window.h"
 
 Application* Application::m_InstancePtr = nullptr;
 
 Application::Application()
 {
+    Logger::Init();
+
     PS_ASSERT(m_InstancePtr == nullptr, "The application is already initialized");
     m_InstancePtr = this;
 
@@ -14,7 +17,7 @@ Application::Application()
     PS_ASSERT(m_Window != nullptr, "m_Window is a nullptr")
 
     // Setup all window callbacks
-    std::cerr << "[PYRUS] Setting up callbacks" << std::endl;
+    Logger::GetCoreLogger()->Info("Setting up callbacks");
     m_Window->SetEventCallback(OnEvent);
 
     // Init renderer etc.

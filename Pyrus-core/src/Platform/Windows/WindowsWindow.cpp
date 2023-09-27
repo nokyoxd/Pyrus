@@ -1,19 +1,21 @@
 #include "WindowsWindow.h"
 
+#include "Utils/Log/Log.h"
+
 WindowsWindow::WindowsWindow()
 {
-    std::cerr << "[PYRUS] Initializing GLFW" << std::endl;
+    Logger::GetCoreLogger()->Info("Initializing GLFW");
     if (!glfwInit())
     {
-        std::cerr << "[PYRUS] Initializing GLFW -> Failed!" << std::endl;
+        Logger::GetCoreLogger()->Error("Initializing GLFW -> Failed!");
         return;
     }
 
-    std::cerr << "[PYRUS] Creating Window" << std::endl;
+    Logger::GetCoreLogger()->Info("Creating Window");
     m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title, NULL, NULL);
     if (!m_Window)
     {
-        std::cerr << "[PYRUS] Creating Window -> Failed!" << std::endl;
+        Logger::GetCoreLogger()->Error("Creating Window -> Failed!");
         glfwTerminate();
         return;
     }
