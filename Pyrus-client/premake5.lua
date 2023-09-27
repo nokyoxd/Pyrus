@@ -36,12 +36,10 @@ project "Pyrus-client"
 		"Pyrus-core",
 	}
 
-	-- Override for Visual Studio
 	filter "action:vs*"
 		targetdir "$(SolutionDir)build/$(Configuration)/"
 		objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
 
-	-- Override for CodeBlocks
 	filter "action:codeblocks"
 		targetdir "%{wks.location}/build/"
 		objdir "!%{wks.location}/build/intermediates/"

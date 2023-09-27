@@ -10,6 +10,7 @@ WindowsWindow::WindowsWindow()
         Logger::GetCoreLogger()->Error("Initializing GLFW -> Failed!");
         return;
     }
+    Logger::GetCoreLogger()->Info("Initialized GLFW | Version {}.{}.{}", GLFW_VERSION_MAJOR, GLFW_VERSION_MINOR, GLFW_VERSION_REVISION);
 
     Logger::GetCoreLogger()->Info("Creating Window");
     m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title, NULL, NULL);
@@ -21,6 +22,15 @@ WindowsWindow::WindowsWindow()
     }
 
     glfwMakeContextCurrent(m_Window);
+
+    Logger::GetCoreLogger()->Info("Initializing GLEW");
+    if (glewInit() != GLEW_OK)
+    {
+        Logger::GetCoreLogger()->Error("Initializing GLEW -> Failed!");
+        return;
+    }
+    Logger::GetCoreLogger()->Info("Initialized GLEW | Version: {}", *glewGetString(GLEW_VERSION));
+
     glfwSetWindowUserPointer(m_Window, &m_Data);
 
     // Setup callbacks

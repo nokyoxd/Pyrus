@@ -16,6 +16,7 @@ project "Pyrus-core"
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS",
+		"GLEW_STATIC"
 	}
 
 	includedirs
@@ -24,12 +25,14 @@ project "Pyrus-core"
 		"%{wks.location}/Pyrus-core/assets",
 		"%{wks.location}/Pyrus-core/vendor",
 		"%{wks.location}/Pyrus-core/vendor/GLFW/include",
-		"%{wks.location}/Pyrus-core/vendor/fmt/include"
+		"%{wks.location}/Pyrus-core/vendor/fmt/include",
+		"%{wks.location}/Pyrus-core/vendor/GLEW/include"
 	}
 
 	libdirs 
 	{ 
-		"%{wks.location}/Pyrus-core/vendor/fmt/lib/"
+		"%{wks.location}/Pyrus-core/vendor/fmt/lib/",
+		"%{wks.location}/Pyrus-core/vendor/GLEW/lib/"
 	}
 
 	links 
@@ -39,7 +42,8 @@ project "Pyrus-core"
 		"gdi32", 
 		"user32", 
 		"kernel32", 
-		"dwmapi"
+		"dwmapi",
+		"glew32s"
 	}
 
 	filter "action:vs*"
