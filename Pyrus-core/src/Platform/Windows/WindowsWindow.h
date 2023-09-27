@@ -17,6 +17,9 @@ public:
 	void* GetNativeWindow() const override { return m_Window; }
 	void SetEventCallback(const EventCallbackFn& fn) override { m_Data.EventCallback = fn; }
 
+	void OnClear() override;
+	void OnUpdate() override;
+
 	void SetVSync(bool state) override;
 	bool GetVSync() const override { return m_Data.VSync; }
 private:
@@ -32,5 +35,6 @@ private:
 		WindowData() : Title("Pyrus"), Width(1280), Height(720), VSync(false) { }
 	};
 
+	bool m_Initialized = false;
 	WindowData m_Data;
 };

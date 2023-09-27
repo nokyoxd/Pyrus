@@ -9,9 +9,9 @@ class CoreLogger
 {
 public:
 	template <typename... Args_t>
-	void Info(const std::string_view text, Args_t&&... ArgsList)
+	void Trace(const std::string_view text, Args_t&&... ArgsList)
 	{
-		LogConsole("[INFO] " + std::string(text), std::forward<Args_t>(ArgsList)...);
+		LogConsole("[TRACE] " + std::string(text), std::forward<Args_t>(ArgsList)...);
 	}
 
 	template <typename ... Args_t>
@@ -46,4 +46,6 @@ private:
 	static std::shared_ptr<CoreLogger> m_CoreLogger;
 };
 
-
+#define PS_CORE_TRACE(...)	::Logger::GetCoreLogger()->Trace(__VA_ARGS__)
+#define PS_CORE_WARN(...)	::Logger::GetCoreLogger()->Warn(__VA_ARGS__)
+#define PS_CORE_ERROR(...)	::Logger::GetCoreLogger()->Error(__VA_ARGS__)

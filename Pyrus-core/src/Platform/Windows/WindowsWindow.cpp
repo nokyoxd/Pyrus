@@ -1,35 +1,44 @@
 #include "WindowsWindow.h"
-
 #include "Utils/Log/Log.h"
 
 WindowsWindow::WindowsWindow()
 {
-    Logger::GetCoreLogger()->Info("Initializing GLFW");
-    if (!glfwInit())
-    {
-        Logger::GetCoreLogger()->Error("Initializing GLFW -> Failed!");
-        return;
-    }
-    Logger::GetCoreLogger()->Info("Initialized GLFW | Version {}.{}.{}", GLFW_VERSION_MAJOR, GLFW_VERSION_MINOR, GLFW_VERSION_REVISION);
+    PS_CORE_TRACE("Creating window {} ({}, {})", m_Data.Title, m_Data.Width, m_Data.Height);
 
-    Logger::GetCoreLogger()->Info("Creating Window");
+    if (!m_Initialized)
+    {
+        PS_CORE_TRACE("Initializing GLFW");
+        if (!glfwInit())
+        {
+            PS_CORE_ERROR("Initializing GLFW -> Failed!");
+            return;
+        }
+        PS_CORE_TRACE("Initialized GLFW | Version: {}.{}.{}", GLFW_VERSION_MAJOR, GLFW_VERSION_MINOR, GLFW_VERSION_REVISION);
+    }
+
     m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title, NULL, NULL);
     if (!m_Window)
     {
-        Logger::GetCoreLogger()->Error("Creating Window -> Failed!");
+        PS_CORE_ERROR("Creating Window -> Failed!");
         glfwTerminate();
         return;
     }
 
     glfwMakeContextCurrent(m_Window);
 
-    Logger::GetCoreLogger()->Info("Initializing GLEW");
-    if (glewInit() != GLEW_OK)
+    if (!m_Initialized)
     {
-        Logger::GetCoreLogger()->Error("Initializing GLEW -> Failed!");
-        return;
+        PS_CORE_TRACE("Initializing GLEW");
+        if (glewInit() != GLEW_OK)
+        {
+            PS_CORE_ERROR("Initializing GLEW -> Failed!");
+            glfwTerminate();
+            return;
+        }
+        PS_CORE_TRACE("Initialized GLEW | Version: {}.{}.{}", GLEW_VERSION_MAJOR, GLEW_VERSION_MINOR, GLEW_VERSION_MICRO);
+
+        m_Initialized = true;
     }
-    Logger::GetCoreLogger()->Info("Initialized GLEW | Version: {}", *glewGetString(GLEW_VERSION));
 
     glfwSetWindowUserPointer(m_Window, &m_Data);
 
@@ -40,6 +49,20 @@ WindowsWindow::WindowsWindow()
 
         Event e;
         e.Type = EventType::WindowClose;
+
+        data.EventCallback(e);
+    });
+
+    glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) 
+    {
+        WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+        // We can access the data from the class later
+        data.Width = width;
+        data.Height = height;
+
+        Event e;
+        e.Type = EventType::WindowResize;
 
         data.EventCallback(e);
     });
@@ -77,6 +100,18 @@ WindowsWindow::~WindowsWindow()
     glfwDestroyWindow(m_Window);
 
     glfwTerminate();
+}
+
+void WindowsWindow::OnClear()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void WindowsWindow::OnUpdate()
+{
+    glfwPollEvents();
+
+    glfwSwapBuffers(m_Window);
 }
 
 void WindowsWindow::SetVSync(bool state)

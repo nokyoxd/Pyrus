@@ -8,7 +8,7 @@ Application* Application::m_InstancePtr = nullptr;
 
 Application::Application()
 {
-    Logger::Init();
+    PS_ASSERT(Logger::Init(), "Logger failed to initialize");
 
     PS_ASSERT(m_InstancePtr == nullptr, "The application is already initialized");
     m_InstancePtr = this;
@@ -16,8 +16,7 @@ Application::Application()
     m_Window = Window::CreatePlatformWindow();
     PS_ASSERT(m_Window != nullptr, "m_Window is a nullptr")
 
-    // Setup all window callbacks
-    Logger::GetCoreLogger()->Info("Setting up callbacks");
+    PS_CORE_TRACE("Setting up callbacks");
     m_Window->SetEventCallback(OnEvent);
 
     // Init renderer etc.
@@ -37,13 +36,14 @@ void Application::Run()
 
     while (m_Running)
     {
-        glClear(GL_COLOR_BUFFER_BIT);
+        m_Window->OnClear();
 
-        // Render here
+        if (!m_Minimized)
+        {
+            // Render here
+        }
 
-        glfwSwapBuffers(window);
-
-        glfwPollEvents();
+        m_Window->OnUpdate();
     }
 }
 
@@ -53,7 +53,20 @@ void Application::OnEvent(Event& e)
     {
     case EventType::WindowClose:
         Application::Get().OnWindowClose(e);
+    case EventType::WindowResize:
+        Application::Get().OnWindowResize(e);
         break;
     }
+}
+
+void Application::OnWindowResize(Event& e)
+{
+    if (m_Window->GetWidth() == 0 || m_Window->GetHeight() == 0)
+    {
+        m_Minimized = true;
+        return;
+    }
+
+    m_Minimized = false;
 }
 

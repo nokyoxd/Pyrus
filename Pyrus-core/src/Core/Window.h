@@ -1,9 +1,9 @@
 #pragma once
 
-#include <functional>
-
 #include "SDK/Macros.h"
 #include "Events/Event.h"
+
+#include <functional>
 
 class Window
 {
@@ -18,6 +18,9 @@ public:
 
 	virtual void* GetNativeWindow() const = 0;
 	virtual void SetEventCallback(const EventCallbackFn& fn) = 0;
+
+	virtual void OnClear() = 0;
+	virtual void OnUpdate() = 0;
 
 	virtual void SetVSync(bool state) = 0;
 	virtual bool GetVSync() const = 0;
