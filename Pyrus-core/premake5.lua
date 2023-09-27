@@ -27,40 +27,32 @@ project "Pyrus-core"
 		"%{wks.location}/Pyrus-core/vendor/fmt/include"
 	}
 
-	-- Override for Visual Studio
+	libdirs 
+	{ 
+		"%{wks.location}/Pyrus-core/vendor/fmt/lib/"
+	}
+
+	links 
+	{ 
+		"opengl32", 
+		"glu32", 
+		"gdi32", 
+		"user32", 
+		"kernel32", 
+		"dwmapi"
+	}
+
 	filter "action:vs*"
 		targetdir "$(SolutionDir)build/$(Configuration)/"
 		objdir "!$(SolutionDir)build/$(Configuration)/intermediates/"
-		links 
-		{ 
-			"glfw3_mt", 
-			"opengl32"
-		}
-		libdirs 
-		{ 
-			"%{wks.location}/Pyrus-core/vendor/GLFW/lib-vc2022",
-			"%{wks.location}/Pyrus-core/vendor/fmt/lib/"
-		}
-
-	-- Override for CodeBlocks
+		links "glfw3_mt"
+		libdirs "%{wks.location}/Pyrus-core/vendor/GLFW/lib-vc2022"
+			
 	filter "action:codeblocks"
 		targetdir "%{wks.location}/build/"
 		objdir "!%{wks.location}/build/intermediates/"
-		links 
-		{ 
-			"libglfw3.a", 
-			"opengl32", 
-			"glu32", 
-			"gdi32", 
-			"user32", 
-			"kernel32", 
-			"dwmapi"
-		}
-		libdirs 
-		{ 
-			"%{wks.location}/Pyrus-core/vendor/GLFW/lib-mingw-w64",
-			"%{wks.location}/Pyrus-core/vendor/fmt/lib/"
-		}
+		links "libglfw3.a"
+		libdirs "%{wks.location}/Pyrus-core/vendor/GLFW/lib-mingw-w64"
 
 	filter "system:Windows"
 		system "windows"
