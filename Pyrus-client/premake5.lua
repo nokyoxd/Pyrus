@@ -46,8 +46,13 @@ project "Pyrus-client"
 		targetdir "%{wks.location}/build/"
 		objdir "!%{wks.location}/build/intermediates/"
 
-	filter "system:windows"
-		systemversion "latest"
+	filter "system:Windows"
+		system "Windows"
+		defines "PS_PLATFORM_WINDOWS"
+
+	filter "system:Linux"
+		system "Linux"
+		defines "PS_PLATFORM_LINUX"
 
 	filter "configurations:Debug"
 		defines "_DEBUG"

@@ -40,8 +40,13 @@ project "Pyrus-core"
 		links { "libglfw3.a", "opengl32", "glu32", "gdi32", "user32", "kernel32", "dwmapi"}
 		libdirs { "%{wks.location}/Pyrus-core/vendor/GLFW/lib-mingw-w64" }
 
-	filter "system:windows"
-		systemversion "latest"
+	filter "system:Windows"
+		system "windows"
+		defines "PS_PLATFORM_WINDOWS"
+
+	filter "system:Linux"
+		system "linux"
+		defines "PS_PLATFORM_LINUX"
 
 	filter "configurations:Debug"
 		defines "_DEBUG"

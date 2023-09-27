@@ -1,9 +1,10 @@
 #include "Window.h"
 
-#include "Platform/Windows/WindowsWindow.h"
-#include "Platform/Linux/LinuxWindow.h"
-
-#define PS_PLATFORM_WINDOWS
+#ifdef PS_PLATFORM_WINDOWS
+	#include "Platform/Windows/WindowsWindow.h"
+#elif PS_PLATFORM_LINUX
+	#include "Platform/Linux/LinuxWindow.h"
+#endif
 
 std::unique_ptr<Window> Window::CreatePlatformWindow()
 {
@@ -15,7 +16,3 @@ std::unique_ptr<Window> Window::CreatePlatformWindow()
 	PS_ASSERT(false, "Invalid Platform!")
 #endif 
 }
-
-
-
-

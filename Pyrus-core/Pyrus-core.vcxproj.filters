@@ -10,14 +10,23 @@
     <Filter Include="src\Events">
       <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Linux">
+      <UniqueIdentifier>{0052F1F1-EC35-B247-5596-AC9A41999CC9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Render">
       <UniqueIdentifier>{FC94E62B-E84C-2879-5154-01D53D2BC369}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\SDK">
+      <UniqueIdentifier>{9EA92FA9-0A89-AE44-13A1-391B7FFF14A6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Utils">
       <UniqueIdentifier>{4D9AFFB3-B904-B42A-0243-65D06EEC917F}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Utils\Logs">
-      <UniqueIdentifier>{D124EBFC-BDF2-DE02-A686-4F2992F3BA67}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -51,22 +60,19 @@
     <ClInclude Include="src\Events\Event.h">
       <Filter>src\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Linux\LinuxWindow.h">
+      <Filter>src\Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Renderer.h">
-      <Filter>src\Render</Filter>
-    </ClInclude>
     <ClInclude Include="src\SDK\Datatypes.h">
-      <Filter>src\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Logs\Logs.h">
-      <Filter>src\Utils\Logs</Filter>
+      <Filter>src\SDK</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\Utils.h">
-      <Filter>src\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SDK\Macros.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h">
@@ -102,8 +108,8 @@
     <ClInclude Include="vendor\ImGui\win32\imgui_impl_win32.h">
       <Filter>vendor\ImGui\win32</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="src\Platform\Linux\LinuxWindow.h" />
+    <ClInclude Include="src\Render\Renderer.h" />
+    <ClInclude Include="src\SDK\Macros.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
@@ -112,11 +118,14 @@
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp">
+      <Filter>src\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Render\Renderer.cpp">
       <Filter>src\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Logs\Logs.cpp">
-      <Filter>src\Utils\Logs</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui.cpp">
       <Filter>vendor\ImGui</Filter>
@@ -136,7 +145,5 @@
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
       <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp" />
   </ItemGroup>
 </Project>
