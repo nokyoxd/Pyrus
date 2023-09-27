@@ -2,9 +2,7 @@
 
 #include <functional>
 
-#include "Utils/Utils.h"
 #include "SDK/Macros.h"
-
 #include "Events/Event.h"
 
 class Window

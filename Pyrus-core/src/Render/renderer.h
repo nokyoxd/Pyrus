@@ -1,9 +1,9 @@
 #pragma once
 
-#include <imgui/imgui.h>
-#include <imgui/imgui_internal.h>
+#include <ImGui/imgui.h>
+#include <ImGui/imgui_internal.h>
 #include <ImGui/opengl3/imgui_impl_opengl3.h>
-#include <imgui/win32/imgui_impl_win32.h>
+#include <ImGui/win32/imgui_impl_win32.h>
 
 #include "SDK/Macros.h"
 #include "SDK/Datatypes.h"

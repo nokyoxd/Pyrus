@@ -1,4 +1,4 @@
-#include "renderer.h"
+#include "Renderer.h"
 
 CRenderer::CRenderer(ERenderType _Type)
 {
