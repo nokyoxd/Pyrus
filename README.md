@@ -6,3 +6,4 @@
 # Dependencies
 - Dear ImGui
 - GLFW
+- fmt
