@@ -16,7 +16,6 @@ Application::Application()
     m_Window = Window::CreatePlatformWindow();
     PS_ASSERT(m_Window != nullptr, "m_Window is a nullptr")
 
-    PS_CORE_TRACE("Setting up callbacks");
     m_Window->SetEventCallback(OnEvent);
 
     // Init renderer etc.
@@ -53,6 +52,7 @@ void Application::OnEvent(Event& e)
     {
     case EventType::WindowClose:
         Application::Get().OnWindowClose(e);
+        break;
     case EventType::WindowResize:
         Application::Get().OnWindowResize(e);
         break;

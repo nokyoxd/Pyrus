@@ -1,19 +1,19 @@
 #include "WindowsWindow.h"
 #include "Utils/Log/Log.h"
 
+static void GLFWErrorCallback(int error, const char* description)
+{
+    PS_CORE_ERROR("GLFW Error -> {}, {}", error, description);
+}
+
 WindowsWindow::WindowsWindow()
 {
-    PS_CORE_TRACE("Creating window {} ({}, {})", m_Data.Title, m_Data.Width, m_Data.Height);
+    PS_CORE_TRACE("Creating window -> {} ({}, {})", m_Data.Title, m_Data.Width, m_Data.Height);
 
     if (!m_Initialized)
     {
-        PS_CORE_TRACE("Initializing GLFW");
-        if (!glfwInit())
-        {
-            PS_CORE_ERROR("Initializing GLFW -> Failed!");
-            return;
-        }
-        PS_CORE_TRACE("Initialized GLFW | Version: {}.{}.{}", GLFW_VERSION_MAJOR, GLFW_VERSION_MINOR, GLFW_VERSION_REVISION);
+        PS_ASSERT(glfwInit(), "Failed to initialize GLFW!");
+        glfwSetErrorCallback(GLFWErrorCallback);
     }
 
     m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title, NULL, NULL);
@@ -28,14 +28,7 @@ WindowsWindow::WindowsWindow()
 
     if (!m_Initialized)
     {
-        PS_CORE_TRACE("Initializing GLEW");
-        if (glewInit() != GLEW_OK)
-        {
-            PS_CORE_ERROR("Initializing GLEW -> Failed!");
-            glfwTerminate();
-            return;
-        }
-        PS_CORE_TRACE("Initialized GLEW | Version: {}.{}.{}", GLEW_VERSION_MAJOR, GLEW_VERSION_MINOR, GLEW_VERSION_MICRO);
+        PS_ASSERT(!glewInit(), "Failed to initialize GLEW!");
 
         m_Initialized = true;
     }
@@ -91,8 +84,6 @@ WindowsWindow::WindowsWindow()
     {
 
     });
-
-    glfwSetErrorCallback(NULL); // Not in use yet
 }
 
 WindowsWindow::~WindowsWindow()
