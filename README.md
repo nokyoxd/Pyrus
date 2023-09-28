@@ -4,6 +4,7 @@
 - Windows 11
 
 # Dependencies
+- Premake
 - ImGui
 - GLFW
 - GLEW
