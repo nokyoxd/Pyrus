@@ -4,6 +4,7 @@
 - Windows 11
 
 # Dependencies
-- Dear ImGui
+- ImGui
 - GLFW
+- GLEW
 - fmt
