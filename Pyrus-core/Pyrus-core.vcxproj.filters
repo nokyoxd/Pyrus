@@ -90,9 +90,6 @@
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Renderer.h">
-      <Filter>src\Render</Filter>
-    </ClInclude>
     <ClInclude Include="src\SDK\Datatypes.h">
       <Filter>src\SDK</Filter>
     </ClInclude>
@@ -189,6 +186,9 @@
     <ClInclude Include="vendor\fmt\include\fmt\xchar.h">
       <Filter>vendor\fmt\include\fmt</Filter>
     </ClInclude>
+    <ClInclude Include="src\Render\Buffer.h" />
+    <ClInclude Include="src\Render\VertexArray.h" />
+    <ClInclude Include="src\Render\Context.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
@@ -202,9 +202,6 @@
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Render\Renderer.cpp">
-      <Filter>src\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\Utils\Log\Log.cpp">
       <Filter>src\Utils\Log</Filter>
@@ -227,5 +224,8 @@
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
       <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
+    <ClCompile Include="src\Render\Buffer.cpp" />
+    <ClCompile Include="src\Render\VertexArray.cpp" />
+    <ClCompile Include="src\Render\Context.cpp" />
   </ItemGroup>
 </Project>

@@ -24,7 +24,8 @@ WindowsWindow::WindowsWindow()
         return;
     }
 
-    glfwMakeContextCurrent(m_Window);
+    m_Context = std::make_unique<Context>(m_Window);
+    m_Context->Init();
 
     if (!m_Initialized)
     {
@@ -74,16 +75,6 @@ WindowsWindow::WindowsWindow()
     {
 
     });
-
-    glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
-    {
-
-    });
-
-    glfwSetWindowRefreshCallback(m_Window, [](GLFWwindow* window)
-    {
-
-    });
 }
 
 WindowsWindow::~WindowsWindow()
@@ -102,7 +93,7 @@ void WindowsWindow::OnUpdate()
 {
     glfwPollEvents();
 
-    glfwSwapBuffers(m_Window);
+    m_Context->SwapBuffers();
 }
 
 void WindowsWindow::SetVSync(bool state)

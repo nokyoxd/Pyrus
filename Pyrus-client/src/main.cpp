@@ -1,5 +1,6 @@
 #include "Pyrus.hpp"
 
+#include <thread>
 #include <iostream>
 #include <Windows.h>
 
@@ -10,11 +11,11 @@ int main(int argc, char** argv)
 {
 	try
 	{
-		auto* app = new Application();
+		auto* w = new Application();
 
-		app->Run();
+		w->Run();
 
-		delete app;
+		delete w;
 	}
 	catch (const std::exception& e)
 	{

@@ -1,1 +1,1 @@
-https://github.com/chris-be/premake-codeblocks
+- [CodeBlocksModule](https://github.com/chris-be/premake-codeblocks)

@@ -1,7 +1,7 @@
 # Pyrus
 
 # Support
-- Windows 11
+- Windows 10/11
 
 # Dependencies
 - [Premake](https://github.com/premake/premake-core)

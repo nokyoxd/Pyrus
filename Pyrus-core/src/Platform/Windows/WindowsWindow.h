@@ -4,6 +4,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <Render/Context.h>
 
 class WindowsWindow : public Window
 {
@@ -24,6 +25,7 @@ public:
 	bool GetVSync() const override { return m_Data.VSync; }
 private:
 	GLFWwindow* m_Window = nullptr;
+	std::unique_ptr<Context> m_Context;
 
 	struct WindowData
 	{
