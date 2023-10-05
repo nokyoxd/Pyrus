@@ -24,7 +24,7 @@ WindowsWindow::WindowsWindow()
         return;
     }
 
-    m_Context = std::make_unique<Context>(m_Window);
+    m_Context = Context::Create(m_Window);
     m_Context->Init();
 
     if (!m_Initialized)

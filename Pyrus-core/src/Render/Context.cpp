@@ -1,11 +1,10 @@
 #include "Context.h"
 
-void Context::Init()
-{
-	glfwMakeContextCurrent(m_Window);
-}
+#include "OpenGL/OpenGLContext.h"
 
-void Context::SwapBuffers()
+struct GLFWwindow;
+
+std::unique_ptr<Context> Context::Create(void* window)
 {
-	glfwSwapBuffers(m_Window);
+	return std::make_unique<OpenGLContext>(static_cast<GLFWwindow*>(window));
 }

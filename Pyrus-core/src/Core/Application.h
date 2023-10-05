@@ -3,6 +3,7 @@
 #include "Core/Window.h"
 #include "Events/Event.h"
 #include "Utils/Utils.h"
+#include "ImGui/ImGuiLayer.h"
 
 class Application
 {
@@ -14,6 +15,7 @@ public:
 	static void OnEvent(Event& e);
 
 	static Application& Get() { return *m_InstancePtr; };
+	std::unique_ptr<Window>& GetWindow() { return m_Window; }
 
 	Application(const Application&) = delete;
 	Application(Application&) = delete;
@@ -29,4 +31,5 @@ private:
 	bool m_Running = true;
 	bool m_Minimized = false;
 	std::unique_ptr<Window> m_Window;
+	std::unique_ptr<ImGuiLayer> m_ImGuiLayer;
 };

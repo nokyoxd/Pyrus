@@ -1,43 +1,35 @@
 #pragma once
-#include <cstdint>
+
+#include <memory>
 
 class VertexBuffer
 {
 public:
-	VertexBuffer(uint32_t size);
-	VertexBuffer(float* verts, uint32_t size);
-	~VertexBuffer();
+	virtual ~VertexBuffer() = default;
 
-	void Bind() const;
-	void UnBind() const;
+	virtual void Bind() const = 0;
+	virtual void UnBind() const = 0;
 
-	void SetData(const void* data, uint32_t size);
-private:
-	uint32_t m_BufferID;
+	virtual void SetData(const void* data, uint32_t size) = 0;
+
+	static std::unique_ptr<VertexBuffer> Create(uint32_t size);
+	static std::unique_ptr<VertexBuffer> Create(float* verts, uint32_t size);
 };
 
 class IndexBuffer
 {
 public:
-	IndexBuffer(uint32_t* inds, uint32_t count);
-	~IndexBuffer();
+	virtual ~IndexBuffer() = default;
 
-	void Bind() const;
-	void UnBind() const;
+	virtual void Bind() const = 0;
+	virtual void UnBind() const = 0;
 
-	uint32_t GetCount() const { return m_Count; }
-private:
-	uint32_t m_BufferID;
-	uint32_t m_Count;
+	virtual uint32_t GetCount() const = 0;
+
+	static std::unique_ptr<IndexBuffer> Create(uint32_t* inds, uint32_t count);
 };
 
 class UniformBuffer
 {
-public:
-	UniformBuffer(uint32_t size, uint32_t binding);
-	~UniformBuffer();
 
-	void SetData(const void* data, uint32_t size, uint32_t offset = 0);
-private:
-	uint32_t m_BufferID = 0;
 };

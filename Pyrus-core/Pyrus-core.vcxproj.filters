@@ -22,6 +22,9 @@
     <Filter Include="src\Render">
       <UniqueIdentifier>{FC94E62B-E84C-2879-5154-01D53D2BC369}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Render\OpenGL">
+      <UniqueIdentifier>{B04A628F-1C61-6025-65D8-EB46D12D31AD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\SDK">
       <UniqueIdentifier>{9EA92FA9-0A89-AE44-13A1-391B7FFF14A6}</UniqueIdentifier>
     </Filter>
@@ -89,6 +92,24 @@
     </ClInclude>
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Buffer.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Context.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\OpenGL\OpenGLContext.h">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\VertexArray.h">
+      <Filter>src\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\SDK\Datatypes.h">
       <Filter>src\SDK</Filter>
@@ -186,9 +207,8 @@
     <ClInclude Include="vendor\fmt\include\fmt\xchar.h">
       <Filter>vendor\fmt\include\fmt</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Buffer.h" />
-    <ClInclude Include="src\Render\VertexArray.h" />
-    <ClInclude Include="src\Render\Context.h" />
+    <ClInclude Include="vendor\ImGui\glfw\imgui_impl_glfw.h" />
+    <ClInclude Include="src\ImGui\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
@@ -202,6 +222,24 @@
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Buffer.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Context.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\VertexArray.cpp">
+      <Filter>src\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\Utils\Log\Log.cpp">
       <Filter>src\Utils\Log</Filter>
@@ -224,8 +262,7 @@
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
       <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
-    <ClCompile Include="src\Render\Buffer.cpp" />
-    <ClCompile Include="src\Render\VertexArray.cpp" />
-    <ClCompile Include="src\Render\Context.cpp" />
+    <ClCompile Include="vendor\ImGui\glfw\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\ImGui\ImGuiLayer.cpp" />
   </ItemGroup>
 </Project>

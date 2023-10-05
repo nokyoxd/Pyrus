@@ -2,7 +2,6 @@
 
 #include <GLFW/glfw3.h>
 #include "Utils/Log/Log.h"
-#include "Window.h"
 
 Application* Application::m_InstancePtr = nullptr;
 
@@ -17,6 +16,8 @@ Application::Application()
     PS_ASSERT(m_Window != nullptr, "m_Window is a nullptr")
 
     m_Window->SetEventCallback(OnEvent);
+
+    m_ImGuiLayer = ImGuiLayer::Create();
 
     // Init renderer etc.
 }
@@ -39,7 +40,11 @@ void Application::Run()
 
         if (!m_Minimized)
         {
-            // Render here
+            m_ImGuiLayer->Begin();
+
+            
+            
+            m_ImGuiLayer->End();
         }
 
         m_Window->OnUpdate();

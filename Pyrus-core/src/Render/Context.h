@@ -1,14 +1,14 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
+#include <memory>
 
 class Context
 {
 public:
-	Context(GLFWwindow* window) : m_Window(window) { }
+	virtual ~Context() = default;
 
-	void Init();
-	void SwapBuffers();
-private:
-	GLFWwindow* m_Window;
+	virtual void Init() = 0;
+	virtual void SwapBuffers() = 0;
+
+	static std::unique_ptr<Context> Create(void* window);
 };

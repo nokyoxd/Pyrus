@@ -5,7 +5,7 @@
 
 #include <fmt/format.h>
 
-class CoreLogger
+class ConsoleLogger
 {
 public:
 	template <typename... Args_t>
@@ -41,11 +41,11 @@ class Logger
 public:
 	static bool Init();
 
-	static std::shared_ptr<CoreLogger>& GetCoreLogger() { return m_CoreLogger; }
+	static std::shared_ptr<ConsoleLogger>& GetConsoleLogger() { return m_ConsoleLogger; }
 private:
-	static std::shared_ptr<CoreLogger> m_CoreLogger;
+	static std::shared_ptr<ConsoleLogger> m_ConsoleLogger;
 };
 
-#define PS_CORE_TRACE(...)	::Logger::GetCoreLogger()->Trace(__VA_ARGS__)
-#define PS_CORE_WARN(...)	::Logger::GetCoreLogger()->Warn(__VA_ARGS__)
-#define PS_CORE_ERROR(...)	::Logger::GetCoreLogger()->Error(__VA_ARGS__)
+#define PS_CORE_TRACE(...)	::Logger::GetConsoleLogger()->Trace(__VA_ARGS__)
+#define PS_CORE_WARN(...)	::Logger::GetConsoleLogger()->Warn(__VA_ARGS__)
+#define PS_CORE_ERROR(...)	::Logger::GetConsoleLogger()->Error(__VA_ARGS__)

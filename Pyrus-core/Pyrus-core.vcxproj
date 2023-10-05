@@ -104,11 +104,15 @@
     <ClInclude Include="src\Core\Application.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="src\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Platform\Linux\LinuxWindow.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Pyrus.hpp" />
     <ClInclude Include="src\Render\Buffer.h" />
     <ClInclude Include="src\Render\Context.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Render\VertexArray.h" />
     <ClInclude Include="src\SDK\Datatypes.h" />
     <ClInclude Include="src\SDK\Macros.h" />
@@ -120,6 +124,7 @@
     <ClInclude Include="vendor\GLEW\include\GL\wglew.h" />
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="vendor\ImGui\glfw\imgui_impl_glfw.h" />
     <ClInclude Include="vendor\ImGui\imconfig.h" />
     <ClInclude Include="vendor\ImGui\imgui.h" />
     <ClInclude Include="vendor\ImGui\imgui_internal.h" />
@@ -146,12 +151,17 @@
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
+    <ClCompile Include="src\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Render\Buffer.cpp" />
     <ClCompile Include="src\Render\Context.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Render\VertexArray.cpp" />
     <ClCompile Include="src\Utils\Log\Log.cpp" />
+    <ClCompile Include="vendor\ImGui\glfw\imgui_impl_glfw.cpp" />
     <ClCompile Include="vendor\ImGui\imgui.cpp" />
     <ClCompile Include="vendor\ImGui\imgui_draw.cpp" />
     <ClCompile Include="vendor\ImGui\imgui_tables.cpp" />
