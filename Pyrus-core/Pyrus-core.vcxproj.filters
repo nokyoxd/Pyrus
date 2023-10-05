@@ -10,6 +10,9 @@
     <Filter Include="src\Events">
       <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ImGui">
+      <UniqueIdentifier>{170E22B3-8378-D629-CCB6-87CF3860B47E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -58,6 +61,9 @@
     <Filter Include="vendor\ImGui">
       <UniqueIdentifier>{1DA38CEE-0906-1C93-B28B-54499ECDE715}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\ImGui\glfw">
+      <UniqueIdentifier>{FCF01C66-6807-1BFC-B17E-A61D1DD4EB83}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor\ImGui\opengl3">
       <UniqueIdentifier>{6464D2F5-50F3-5BBF-F911-70BAE57F6C65}</UniqueIdentifier>
     </Filter>
@@ -83,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="src\Events\Event.h">
       <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImGui\ImGuiLayer.h">
+      <Filter>src\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Linux\LinuxWindow.h">
       <Filter>src\Platform\Linux</Filter>
@@ -140,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h">
       <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\glfw\imgui_impl_glfw.h">
+      <Filter>vendor\ImGui\glfw</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imconfig.h">
       <Filter>vendor\ImGui</Filter>
@@ -207,8 +219,6 @@
     <ClInclude Include="vendor\fmt\include\fmt\xchar.h">
       <Filter>vendor\fmt\include\fmt</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\ImGui\glfw\imgui_impl_glfw.h" />
-    <ClInclude Include="src\ImGui\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
@@ -216,6 +226,9 @@
     </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImGui\ImGuiLayer.cpp">
+      <Filter>src\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp">
       <Filter>src\Platform\Linux</Filter>
@@ -244,6 +257,9 @@
     <ClCompile Include="src\Utils\Log\Log.cpp">
       <Filter>src\Utils\Log</Filter>
     </ClCompile>
+    <ClCompile Include="vendor\ImGui\glfw\imgui_impl_glfw.cpp">
+      <Filter>vendor\ImGui\glfw</Filter>
+    </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui.cpp">
       <Filter>vendor\ImGui</Filter>
     </ClCompile>
@@ -262,7 +278,5 @@
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
       <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
-    <ClCompile Include="vendor\ImGui\glfw\imgui_impl_glfw.cpp" />
-    <ClCompile Include="src\ImGui\ImGuiLayer.cpp" />
   </ItemGroup>
 </Project>

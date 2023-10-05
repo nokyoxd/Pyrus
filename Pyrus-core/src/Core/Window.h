@@ -4,6 +4,7 @@
 #include "Events/Event.h"
 
 #include <functional>
+#include <memory>
 
 class Window
 {

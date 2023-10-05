@@ -29,9 +29,11 @@ private:
 	template <typename... Args_t>
 	void LogConsole(const std::string_view text, Args_t&&... ArgsList)
 	{
+	    /*
 		if constexpr (sizeof...(ArgsList) > 0)
 			std::cout << fmt::format(text, ArgsList...) << std::endl;
 		else
+        */
 			std::cout << text << std::endl;
 	}
 };

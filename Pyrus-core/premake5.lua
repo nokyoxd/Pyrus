@@ -56,6 +56,8 @@ project "Pyrus-core"
 		targetdir "%{wks.location}/build/"
 		objdir "!%{wks.location}/build/intermediates/"
 		links "libglfw3.a"
+		links "libopengl32.a"
+		links "libgdi32.a"
 		libdirs "%{wks.location}/Pyrus-core/vendor/GLFW/lib-mingw-w64"
 
 	filter "system:Windows"
