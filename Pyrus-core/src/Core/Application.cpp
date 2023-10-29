@@ -1,16 +1,23 @@
 #include "Application.h"
 
 #include <GLFW/glfw3.h>
-#include "Window.h"
+#include "Utils/Log/Log.h"
+
+Application* Application::m_InstancePtr = nullptr;
 
 Application::Application()
 {
-    m_Window = Window::Get().Create();
+    PS_ASSERT(Logger::Init(), "Logger failed to initialize");
+
+    PS_ASSERT(m_InstancePtr == nullptr, "The application is already initialized");
+    m_InstancePtr = this;
+
+    m_Window = Window::CreatePlatformWindow();
     PS_ASSERT(m_Window != nullptr, "m_Window is a nullptr")
 
-    // Setup all window callbacks
-    std::cerr << "Setting up callbacks" << std::endl;
-    Window::Get().SetupCallbacks(m_Window);
+    m_Window->SetEventCallback(OnEvent);
+
+    m_ImGuiLayer = ImGuiLayer::Create();
 
     // Init renderer etc.
 }
@@ -19,41 +26,52 @@ Application::~Application()
 {
     // Destroy renderer etc.
 
-    Window::Get().Destroy();
+    m_InstancePtr = nullptr;
 }
 
 void Application::Run()
 {
-    while (!glfwWindowShouldClose(m_Window) && m_Running)
+    // Get the GLFWwindow pointer
+    auto* window = static_cast<GLFWwindow*>(m_Window->GetNativeWindow());
+
+    while (m_Running)
     {
-        glClear(GL_COLOR_BUFFER_BIT);
+        m_Window->OnClear();
 
-        // Render here
+        if (!m_Minimized)
+        {
+            m_ImGuiLayer->Begin();
 
-        glfwSwapBuffers(m_Window);
+            
+            
+            m_ImGuiLayer->End();
+        }
 
-        glfwPollEvents();
+        m_Window->OnUpdate();
     }
 }
 
-void Application::OnEvent(EventType eType)
+void Application::OnEvent(Event& e)
 {
-    switch (eType)
+    switch (e.Type)
     {
-    case None:
+    case EventType::WindowClose:
+        Application::Get().OnWindowClose(e);
         break;
-    case Key:
-        break;
-    case Mouse:
-        break;
-    case Cursor:
-        break;
-    case Resize:
-        break;
-    case Refresh:
-        break;
-    case Error:
+    case EventType::WindowResize:
+        Application::Get().OnWindowResize(e);
         break;
     }
+}
+
+void Application::OnWindowResize(Event& e)
+{
+    if (m_Window->GetWidth() == 0 || m_Window->GetHeight() == 0)
+    {
+        m_Minimized = true;
+        return;
+    }
+
+    m_Minimized = false;
 }
 

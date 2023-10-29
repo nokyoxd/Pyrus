@@ -4,105 +4,279 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\core">
-      <UniqueIdentifier>{C55F2ECF-B12C-89DA-DA45-7782C671BE68}</UniqueIdentifier>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\render">
-      <UniqueIdentifier>{1CA98B76-0861-CDC3-7168-A61F5D3F68B4}</UniqueIdentifier>
+    <Filter Include="src\Events">
+      <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\utils">
-      <UniqueIdentifier>{6DAA42B6-D914-F72C-2253-A8D28EFCD481}</UniqueIdentifier>
+    <Filter Include="src\ImGui">
+      <UniqueIdentifier>{170E22B3-8378-D629-CCB6-87CF3860B47E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\utils\logs">
-      <UniqueIdentifier>{11D54E7E-FDA2-4284-E636-B3AAD2A31EE9}</UniqueIdentifier>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Linux">
+      <UniqueIdentifier>{0052F1F1-EC35-B247-5596-AC9A41999CC9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render">
+      <UniqueIdentifier>{FC94E62B-E84C-2879-5154-01D53D2BC369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render\OpenGL">
+      <UniqueIdentifier>{B04A628F-1C61-6025-65D8-EB46D12D31AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SDK">
+      <UniqueIdentifier>{9EA92FA9-0A89-AE44-13A1-391B7FFF14A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Utils">
+      <UniqueIdentifier>{4D9AFFB3-B904-B42A-0243-65D06EEC917F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Utils\Log">
+      <UniqueIdentifier>{9E10C983-0AD1-44BA-D30B-8E373F8B8996}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vendor\imgui">
-      <UniqueIdentifier>{5D3BD0F0-499E-5F95-F223-984BDE652B18}</UniqueIdentifier>
+    <Filter Include="vendor\GLEW">
+      <UniqueIdentifier>{B17667C1-1D2C-E0B6-A620-DA8D12D5D6BA}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vendor\imgui\dx9">
-      <UniqueIdentifier>{C120240B-AD19-435D-D64B-28E2C2A32269}</UniqueIdentifier>
+    <Filter Include="vendor\GLEW\include">
+      <UniqueIdentifier>{24BF1419-9020-F226-198E-38D985EE28E6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vendor\imgui\win32">
-      <UniqueIdentifier>{1FD5FF65-0BB9-C0BB-7419-BB0E601CAB3D}</UniqueIdentifier>
+    <Filter Include="vendor\GLEW\include\GL">
+      <UniqueIdentifier>{06EE64D9-F2E7-8D2B-DB54-243CC7EDF397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW">
+      <UniqueIdentifier>{D27667C1-3E2C-E0B6-C720-DA8D33D5D6BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include">
+      <UniqueIdentifier>{45501F1D-B1B1-FC2A-3A1F-43DDA67F33EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include\GLFW">
+      <UniqueIdentifier>{A4FE9F69-9023-EFE9-B96E-D479A5F2ED07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui">
+      <UniqueIdentifier>{1DA38CEE-0906-1C93-B28B-54499ECDE715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui\glfw">
+      <UniqueIdentifier>{FCF01C66-6807-1BFC-B17E-A61D1DD4EB83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui\opengl3">
+      <UniqueIdentifier>{6464D2F5-50F3-5BBF-F911-70BAE57F6C65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui\win32">
+      <UniqueIdentifier>{DF0CDB2A-CBF0-9B80-3451-96D320548602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\fmt">
+      <UniqueIdentifier>{699BC5A8-5553-07F6-BE5A-E051AA31A2E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\fmt\include">
+      <UniqueIdentifier>{DC1BC8B7-C8FF-880D-3160-83601D63738F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\fmt\include\fmt">
+      <UniqueIdentifier>{12300654-FE29-2FA6-E796-C5B6D32F9512}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Application.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\Event.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImGui\ImGuiLayer.h">
+      <Filter>src\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Linux\LinuxWindow.h">
+      <Filter>src\Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pyrus.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Window.h">
-      <Filter>src\core</Filter>
+    <ClInclude Include="src\Render\Buffer.h">
+      <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\Render\Renderer.h">
-      <Filter>src\render</Filter>
+    <ClInclude Include="src\Render\Context.h">
+      <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Datatypes.h">
-      <Filter>src\utils</Filter>
+    <ClInclude Include="src\Render\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Render\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Logs\Logs.h">
-      <Filter>src\utils\logs</Filter>
+    <ClInclude Include="src\Render\OpenGL\OpenGLContext.h">
+      <Filter>src\Render\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Macros.h">
-      <Filter>src\utils</Filter>
+    <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\VertexArray.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDK\Datatypes.h">
+      <Filter>src\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDK\Macros.h">
+      <Filter>src\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Log\Log.h">
+      <Filter>src\Utils\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Utils.h">
+      <Filter>src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLEW\include\GL\eglew.h">
+      <Filter>vendor\GLEW\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLEW\include\GL\glew.h">
+      <Filter>vendor\GLEW\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLEW\include\GL\glxew.h">
+      <Filter>vendor\GLEW\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLEW\include\GL\wglew.h">
+      <Filter>vendor\GLEW\include\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\glfw\imgui_impl_glfw.h">
+      <Filter>vendor\ImGui\glfw</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imconfig.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imgui.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imgui_internal.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imstb_rectpack.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imstb_textedit.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\imstb_truetype.h">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3.h">
+      <Filter>vendor\ImGui\opengl3</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3_loader.h">
+      <Filter>vendor\ImGui\opengl3</Filter>
     </ClInclude>
     <ClInclude Include="vendor\ImGui\win32\imgui_impl_win32.h">
-      <Filter>vendor\imgui\win32</Filter>
+      <Filter>vendor\ImGui\win32</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="src\Events\Event.h" />
-    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
-    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
-    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3.h" />
-    <ClInclude Include="vendor\ImGui\opengl3\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="vendor\fmt\include\fmt\args.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\chrono.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\color.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\compile.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\core.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\format-inl.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\format.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\os.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\ostream.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\printf.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\ranges.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\std.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\fmt\include\fmt\xchar.h">
+      <Filter>vendor\fmt\include\fmt</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\Application.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
-      <Filter>src\core</Filter>
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Render\Renderer.cpp">
-      <Filter>src\render</Filter>
+    <ClCompile Include="src\ImGui\ImGuiLayer.cpp">
+      <Filter>src\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utils\Logs\Logs.cpp">
-      <Filter>src\utils\logs</Filter>
+    <ClCompile Include="src\Platform\Linux\LinuxWindow.cpp">
+      <Filter>src\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Buffer.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Context.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\VertexArray.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Log\Log.cpp">
+      <Filter>src\Utils\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\glfw\imgui_impl_glfw.cpp">
+      <Filter>vendor\ImGui\glfw</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui.cpp">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui_draw.cpp">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui_tables.cpp">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\imgui_widgets.cpp">
-      <Filter>vendor\imgui</Filter>
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGui\opengl3\imgui_impl_opengl3.cpp">
+      <Filter>vendor\ImGui\opengl3</Filter>
     </ClCompile>
     <ClCompile Include="vendor\ImGui\win32\imgui_impl_win32.cpp">
-      <Filter>vendor\imgui\win32</Filter>
+      <Filter>vendor\ImGui\win32</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="vendor\ImGui\opengl3\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 </Project>

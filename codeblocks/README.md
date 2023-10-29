@@ -1,0 +1,1 @@
+- [CodeBlocksModule](https://github.com/chris-be/premake-codeblocks)

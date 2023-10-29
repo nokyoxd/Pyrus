@@ -1,6 +1,9 @@
-workspace "Mayday"
+require "codeblocks"
+
+workspace "Pyrus"
 	architecture "x64"
-	startproject "Mayday-core"
+	startproject "Pyrus-client"
+	toolset "gcc"
 
 	configurations
 	{
@@ -14,5 +17,5 @@ workspace "Mayday"
 	}
 
 
-include "Mayday-core"
-include "Mayday-client"
+include "Pyrus-core"
+include "Pyrus-client"

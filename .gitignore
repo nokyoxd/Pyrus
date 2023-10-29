@@ -1,3 +1,7 @@
+# Directories
+.vs/
+build/
+
 # Prerequisites
 *.d
 
@@ -24,7 +28,3 @@
 *.exe
 *.out
 *.app
-
-# Directories
-.vs/
-Build/
